@@ -4,7 +4,8 @@ from cryptography.fernet import Fernet
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox
 
-class MyWidget(QMainWindow):
+
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('design.ui', self)
@@ -24,14 +25,13 @@ class MyWidget(QMainWindow):
         return Fernet.generate_key()
 
 
-
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyWidget()
+    ex = MainWindow()
     ex.show()
     sys.excepthook = except_hook
     sys.exit(app.exec_())
