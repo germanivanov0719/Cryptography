@@ -14,3 +14,6 @@
 
 ## Функции
 [В работе]
+
+## Conctact info:
+germanivanov0719@gmail.com
