@@ -1,5 +1,7 @@
+import hashlib
 import sys
 from cryptography.fernet import Fernet
+import hashlib
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox
@@ -12,6 +14,7 @@ class MainWindow(QMainWindow):
         self.generate_fe.clicked.connect(self.fgenerate_fe)
 
     def fgenerate_fe(self):
+        hashlib.md5()
         wa = QMessageBox()
         wa.setText("You are about to generate a new Fernet key. ")
         wa.setInformativeText("The new key is going to replace the old one. Are you sure you can safely proceed?")
