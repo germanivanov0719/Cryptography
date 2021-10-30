@@ -83,6 +83,7 @@ class MainWindow(QMainWindow):
             wa.setText("The key you entered is not a valid Fernet key.")
             wa.setInformativeText("You can generate a new valid key by pressing \"Generate\" button on the right.")
             wa.setStandardButtons(QMessageBox.Ok)
+            wa.setIcon(QMessageBox.Warning)
             wa.exec_()
             return 0
         encrypted = f.encrypt(self.textEdit_fe.toPlainText().encode())
