@@ -12,7 +12,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('design.ui', self)
-        
+
         # Connecting elements
 
         # Fernet Key Generators
