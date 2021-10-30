@@ -12,11 +12,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('design.ui', self)
-
-        # Fix HiDPI
-        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
-
+        
         # Connecting elements
 
         # Fernet Key Generators
@@ -104,6 +100,9 @@ def except_hook(cls, exception, traceback):
 
 
 if __name__ == '__main__':
+    # Fix HiDPI
+    QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+    QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
     app = QApplication(sys.argv)
     ex = MainWindow()
     ex.show()
