@@ -29,3 +29,6 @@ class connections:
 
         # Sha hashing
         self.hash_sha.clicked.connect(self.fhash_sha)
+
+        # Md5 hashing
+        self.hash_md5.clicked.connect(self.fhash_md5)
