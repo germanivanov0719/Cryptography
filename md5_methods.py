@@ -15,3 +15,9 @@ class md5_methods:
         text = self.textEdit_md5.toPlainText().encode()
         r = hashlib.md5(text)
         self.result_md5.setText(r.hexdigest())
+
+    def fcopy_md5(self):
+        pc.copy(self.result_md5.text())
+
+    def fpaste_md5(self):
+        self.textEdit_md5.setText(pc.paste())

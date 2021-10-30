@@ -22,10 +22,14 @@ class connections:
         # Copy
         self.copy_fe.clicked.connect(self.fcopy_fe)
         self.copy_fd.clicked.connect(self.fcopy_fd)
+        self.copy_sha.clicked.connect(self.fcopy_sha)
+        self.copy_md5.clicked.connect(self.fcopy_md5)
 
         # Paste
         self.paste_fe.clicked.connect(self.fpaste_fe)
         self.paste_fd.clicked.connect(self.fpaste_fd)
+        self.paste_sha.clicked.connect(self.fpaste_sha)
+        self.paste_md5.clicked.connect(self.fpaste_md5)
 
         # Sha hashing
         self.hash_sha.clicked.connect(self.fhash_sha)

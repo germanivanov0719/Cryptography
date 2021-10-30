@@ -38,3 +38,9 @@ class sha_methods:
             r = hashlib.sha3_384(text)
         r = r.hexdigest()
         self.result_sha.setText(r)
+
+    def fcopy_sha(self):
+        pc.copy(self.result_sha.text())
+
+    def fpaste_sha(self):
+        self.textEdit_sha.setText(pc.paste())
