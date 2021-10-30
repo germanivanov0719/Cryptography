@@ -4,7 +4,7 @@ from cryptography.fernet import Fernet
 import hashlib
 import pyperclip as pc
 
-from PyQt5 import uic, QtWidgets, QtCore
+from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox
 
 
@@ -12,10 +12,6 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('design.ui', self)
-
-        # # Fix HiDPI
-        # QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-        # QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
         # Connecting elements
 
@@ -27,25 +23,8 @@ class MainWindow(QMainWindow):
         self.encrypt_fe.clicked.connect(self.fencrypt_fe)
         self.decrypt_fd.clicked.connect(self.fdecrypt_fd)
 
-        # Copy
-        self.copy_fe.clicked.connect(self.fcopy_fe)
-        self.copy_fd.clicked.connect(self.fcopy_fd)
-
-        # Paste
-        self.paste_fe.clicked.connect(self.fpaste_fe)
-        self.paste_fd.clicked.connect(self.fpaste_fd)
-
-    def fcopy_fe(self):
-        pc.copy(self.result_fe.text())
-
-    def fcopy_fd(self):
-        pc.copy(self.textEdit_fd.toPlainText())
-
-    def fpaste_fe(self):
-        self.textEdit_fe.setText(pc.paste())
-
-    def fpaste_fd(self):
-        self.result_fd.setText(pc.paste())
+        # Copy and Paste buttons
+        # self.copy_fe.clicked.connect()
 
     def fencrypt_fe(self):
         f = 0
