@@ -13,9 +13,9 @@ class MainWindow(QMainWindow):
         super().__init__()
         uic.loadUi('design.ui', self)
 
-        # # Fix HiDPI
-        # QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-        # QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
+        # Fix HiDPI
+        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
         # Connecting elements
 
