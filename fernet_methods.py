@@ -43,7 +43,6 @@ class fernet_methods:
             f = Fernet(self.key_fd.text().encode())
             # print(self.key_fd.text())
         except ValueError:
-            print(ex)
             wa = QMessageBox()
             wa.setText("The key you entered is not a valid Fernet key.")
             wa.setInformativeText("You can generate a new valid key by pressing \"Generate\" button on the right.")
