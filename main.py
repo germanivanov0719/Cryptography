@@ -1,11 +1,11 @@
 import hashlib
 import sys
-from cryptography.fernet import Fernet
-import hashlib
-import pyperclip as pc
 
+import cryptography.fernet
+import pyperclip as pc
 from PyQt5 import uic, QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+from cryptography.fernet import Fernet
 
 
 class MainWindow(QMainWindow):
@@ -62,8 +62,6 @@ class MainWindow(QMainWindow):
         r = r.hexdigest()
         self.result_sha.setText(r)
 
-
-
     def fcopy_fe(self):
         pc.copy(self.result_fe.text())
 
@@ -77,13 +75,13 @@ class MainWindow(QMainWindow):
         self.result_fd.setText(pc.paste())
 
     def fencrypt_fe(self):
-        f = 0
         try:
             f = Fernet(self.key_fe.text().encode())
+            # print(self.key_fe.text())
         except ValueError:
             wa = QMessageBox()
-            wa.setText("The key you entered is not a valid Fernet key")
-            wa.setInformativeText("You can generate a new valid key by pressing \"Generate\"")
+            wa.setText("The key you entered is not a valid Fernet key.")
+            wa.setInformativeText("You can generate a new valid key by pressing \"Generate\" button on the right.")
             wa.setStandardButtons(QMessageBox.Ok)
             wa.exec_()
             return 0
@@ -91,41 +89,56 @@ class MainWindow(QMainWindow):
         self.result_fe.setText(encrypted.decode())
 
     def fdecrypt_fd(self):
-        f = 0
         try:
             f = Fernet(self.key_fd.text().encode())
+            # print(self.key_fd.text())
         except ValueError:
+            print(ex)
             wa = QMessageBox()
-            wa.setText("The key you entered is not a valid Fernet key")
-            wa.setInformativeText("You can generate a new valid key by pressing \"Generate\"")
+            wa.setText("The key you entered is not a valid Fernet key.")
+            wa.setInformativeText("You can generate a new valid key by pressing \"Generate\" button on the right.")
             wa.setStandardButtons(QMessageBox.Ok)
+            wa.setIcon(QMessageBox.Warning)
             wa.exec_()
             return 0
-        decrypted = f.decrypt(self.result_fd.text().encode())
+        try:
+            # print(self.result_fd.text())
+            decrypted = f.decrypt(self.result_fd.text().encode())
+        except cryptography.fernet.InvalidToken:
+            wa = QMessageBox()
+            wa.setText("Unable to decrypt data.")
+            wa.setInformativeText("Either the encrypted data was corrupted, or this key cannot be used for this data.")
+            wa.setStandardButtons(QMessageBox.Ok)
+            wa.setIcon(QMessageBox.Critical)
+            wa.exec_()
+            return 0
         self.textEdit_fd.setText(decrypted.decode())
-
 
     def fgenerate_fe(self):
         wa = QMessageBox()
-        wa.setText("You are about to generate a new Fernet key. ")
+        wa.setText("You are about to generate a new Fernet key.")
         wa.setInformativeText("The new key is going to replace the old one. Are you sure you can safely proceed?")
         wa.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
         # wa.setDefaultButton(QMessageBox.No)
+        wa.setIcon(QMessageBox.Question)
         if wa.exec() == QMessageBox.Yes:
-            self.key_fe.setText(Fernet.generate_key().decode())
+            self.generate_fernet_key()
 
     def fgenerate_fd(self):
         wa = QMessageBox()
-        wa.setText("You are about to generate a new Fernet key. ")
+        wa.setText("You are about to generate a new Fernet key.")
         wa.setInformativeText("The new key is going to replace the old one. Are you sure you can safely proceed?")
         wa.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
+        wa.setIcon(QMessageBox.Question)
         # wa.setDefaultButton(QMessageBox.No)
         if wa.exec() == QMessageBox.Yes:
-            self.key_fd.setText(Fernet.generate_key().decode())
-
+            self.generate_fernet_key()
 
     def generate_fernet_key(self):
-        return Fernet.generate_key()
+        key = Fernet.generate_key().decode()
+        self.key_fd.setText(key)
+        self.key_fe.setText(key)
+        return key
 
 
 def except_hook(cls, exception, traceback):
