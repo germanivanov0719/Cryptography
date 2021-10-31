@@ -136,10 +136,13 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -491,7 +494,7 @@ p, li { white-space: pre-wrap; }
       </widget>
       <widget class="QWidget" name="tab_sha">
        <attribute name="title">
-        <string>SHAs</string>
+        <string>SHA Hashing</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_7">
         <item row="0" column="0">
@@ -502,7 +505,10 @@ p, li { white-space: pre-wrap; }
           <item row="0" column="0">
            <widget class="QLabel" name="label_sha">
             <property name="text">
-             <string>Text to encrypt:</string>
+             <string>Text to hash:</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -537,7 +543,7 @@ p, li { white-space: pre-wrap; }
            </layout>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="label_3_sha">
             <property name="text">
              <string>Algorithm:</string>
             </property>
@@ -708,7 +714,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="label_2_sha">
             <property name="text">
              <string>Result:</string>
             </property>
@@ -775,9 +781,9 @@ p, li { white-space: pre-wrap; }
            <enum>QFormLayout::ExpandingFieldsGrow</enum>
           </property>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_sha_2">
+           <widget class="QLabel" name="label_md5">
             <property name="text">
-             <string>Text to encrypt:</string>
+             <string>Text to hash:</string>
             </property>
            </widget>
           </item>
@@ -812,7 +818,7 @@ p, li { white-space: pre-wrap; }
            </layout>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="label_2_md5">
             <property name="text">
              <string>Result:</string>
             </property>
@@ -872,7 +878,7 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tab_compare">
        <attribute name="title">
         <string>Compare</string>
        </attribute>
@@ -883,7 +889,7 @@ p, li { white-space: pre-wrap; }
            <enum>QFormLayout::ExpandingFieldsGrow</enum>
           </property>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="label_comp">
             <property name="text">
              <string>First text:</string>
             </property>
@@ -908,7 +914,7 @@ p, li { white-space: pre-wrap; }
            </layout>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_5">
+           <widget class="QLabel" name="label_2_comp">
             <property name="text">
              <string>Second text:</string>
             </property>
@@ -933,7 +939,7 @@ p, li { white-space: pre-wrap; }
            </layout>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="label_3_comp">
             <property name="text">
              <string>Result:</string>
             </property>
@@ -1006,8 +1012,35 @@ color: green
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Language</string>
+    </property>
+    <addaction name="menuEnglish"/>
+    <addaction name="menuRussian"/>
+   </widget>
+   <addaction name="menuLanguage"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="menuEnglish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="menuRussian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Русский</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

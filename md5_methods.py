@@ -8,6 +8,7 @@ import hashlib
 import sys
 import cryptography.fernet
 import pyperclip as pc
+import locale
 
 
 class md5_methods:

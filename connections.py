@@ -8,6 +8,7 @@ import hashlib
 import sys
 import cryptography.fernet
 import pyperclip as pc
+import locale
 
 
 class connections:
@@ -42,3 +43,7 @@ class connections:
         # Compare
         self.textEdit1_comp.textChanged.connect(self.compare)
         self.textEdit2_comp.textChanged.connect(self.compare)
+
+        # menubar
+        self.menuEnglish.triggered.connect(self.to_english)
+        self.menuRussian.triggered.connect(self.to_russian)

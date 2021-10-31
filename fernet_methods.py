@@ -8,6 +8,7 @@ import hashlib
 import sys
 import cryptography.fernet
 import pyperclip as pc
+import locale
 
 
 class fernet_methods:
@@ -29,8 +30,9 @@ class fernet_methods:
             # print(self.key_fe.text())
         except ValueError:
             wa = QMessageBox()
-            wa.setText("The key you entered is not a valid Fernet key.")
-            wa.setInformativeText("You can generate a new valid key by pressing \"Generate\" button on the right.")
+            wa.setWindowTitle(self.dict['Warning'])
+            wa.setText(self.dict['Invalid Fernet title'])
+            wa.setInformativeText(self.dict['Invalid Fernet body'])
             wa.setStandardButtons(QMessageBox.Ok)
             wa.setIcon(QMessageBox.Warning)
             wa.exec_()
@@ -44,8 +46,9 @@ class fernet_methods:
             # print(self.key_fd.text())
         except ValueError:
             wa = QMessageBox()
-            wa.setText("The key you entered is not a valid Fernet key.")
-            wa.setInformativeText("You can generate a new valid key by pressing \"Generate\" button on the right.")
+            wa.setWindowTitle(self.dict['Warning'])
+            wa.setText(self.dict['Invalid Fernet title'])
+            wa.setInformativeText(self.dict['Invalid Fernet body'])
             wa.setStandardButtons(QMessageBox.Ok)
             wa.setIcon(QMessageBox.Warning)
             wa.exec_()
@@ -55,8 +58,9 @@ class fernet_methods:
             decrypted = f.decrypt(self.result_fd.text().encode())
         except cryptography.fernet.InvalidToken:
             wa = QMessageBox()
-            wa.setText("Unable to decrypt data.")
-            wa.setInformativeText("Either the encrypted data was corrupted, or this key cannot be used for this data.")
+            wa.setWindowTitle(self.dict['Error'])
+            wa.setText(self.dict['Decryption error title'])
+            wa.setInformativeText(self.dict['Decryption error body'])
             wa.setStandardButtons(QMessageBox.Ok)
             wa.setIcon(QMessageBox.Critical)
             wa.exec_()
@@ -65,8 +69,9 @@ class fernet_methods:
 
     def fgenerate_fe(self):
         wa = QMessageBox()
-        wa.setText("You are about to generate a new Fernet key.")
-        wa.setInformativeText("The new key is going to replace the old one. Are you sure you can safely proceed?")
+        wa.setWindowTitle(self.dict['Confirm'])
+        wa.setText(self.dict['New Fernet title'])
+        wa.setInformativeText(self.dict['New Fernet body'])
         wa.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
         # wa.setDefaultButton(QMessageBox.No)
         wa.setIcon(QMessageBox.Question)
@@ -75,8 +80,9 @@ class fernet_methods:
 
     def fgenerate_fd(self):
         wa = QMessageBox()
-        wa.setText("You are about to generate a new Fernet key.")
-        wa.setInformativeText("The new key is going to replace the old one. Are you sure you can safely proceed?")
+        wa.setWindowTitle(self.dict['Confirm'])
+        wa.setText(self.dict['New Fernet title'])
+        wa.setInformativeText(self.dict['New Fernet body'])
         wa.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
         wa.setIcon(QMessageBox.Question)
         # wa.setDefaultButton(QMessageBox.No)
