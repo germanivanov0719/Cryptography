@@ -8,7 +8,10 @@ from cryptography.fernet import Fernet
 from fernet_methods import fernet_methods
 from sha_methods import sha_methods
 from md5_methods import md5_methods
+from compare_methods import compare_methods
 from connections import connections
+
+
 
 # other libs
 import hashlib
@@ -17,7 +20,11 @@ import cryptography.fernet
 import pyperclip as pc
 
 
-class MainWindow(QMainWindow, fernet_methods, sha_methods, md5_methods, connections):
+class MainWindow(QMainWindow,
+                 fernet_methods,
+                 sha_methods, md5_methods,
+                 compare_methods,
+                 connections):
     def __init__(self):
         super().__init__()
         uic.loadUi('design.ui', self)

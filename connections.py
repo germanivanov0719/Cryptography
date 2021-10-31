@@ -30,9 +30,15 @@ class connections:
         self.paste_fd.clicked.connect(self.fpaste_fd)
         self.paste_sha.clicked.connect(self.fpaste_sha)
         self.paste_md5.clicked.connect(self.fpaste_md5)
+        self.paste1_comp.clicked.connect(self.fpaste1_comp)
+        self.paste2_comp.clicked.connect(self.fpaste2_comp)
 
         # Sha hashing
         self.hash_sha.clicked.connect(self.fhash_sha)
 
         # Md5 hashing
         self.hash_md5.clicked.connect(self.fhash_md5)
+
+        # Compare
+        self.textEdit1_comp.textChanged.connect(self.compare)
+        self.textEdit2_comp.textChanged.connect(self.compare)
