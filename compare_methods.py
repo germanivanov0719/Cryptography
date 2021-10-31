@@ -14,10 +14,10 @@ class compare_methods:
     def compare(self):
         if self.textEdit1_comp.toPlainText() == self.textEdit2_comp.toPlainText():
             self.result_comp.setText("Same")
-            self.result_comp.setStyleSheet("background-color: #00000000; color: green")
+            self.result_comp.setStyleSheet("border: 0; background-color: #00000000; color: green")
         else:
             self.result_comp.setText("Different")
-            self.result_comp.setStyleSheet("background-color: #00000000; color: red")
+            self.result_comp.setStyleSheet("border: 0; center; background-color: #00000000; color: red")
 
     def fpaste1_comp(self):
         self.textEdit1_comp.setText(pc.paste())
