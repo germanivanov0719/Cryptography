@@ -44,6 +44,7 @@
 * Pyperclip >= 1.8.1
 * Python >= 3.7.0
 * Hashlib (встроен в Python)
+* Locale (встроен в Python)
 
 
 ## Контакты:
