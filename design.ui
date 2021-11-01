@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>739</width>
-    <height>574</height>
+    <width>743</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -136,7 +136,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -534,11 +534,22 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="paste_sha">
-              <property name="text">
-               <string>Paste</string>
-              </property>
-             </widget>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QPushButton" name="paste_sha">
+                <property name="text">
+                 <string>Paste</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="file_sha">
+                <property name="text">
+                 <string>Select File</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </item>
@@ -809,11 +820,22 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="paste_md5">
-              <property name="text">
-               <string>Paste</string>
-              </property>
-             </widget>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QPushButton" name="paste_md5">
+                <property name="text">
+                 <string>Paste</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>Select File</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </item>
@@ -1008,7 +1030,7 @@ color: green
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>739</width>
+     <width>743</width>
      <height>24</height>
     </rect>
    </property>
