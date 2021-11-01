@@ -13,7 +13,8 @@ class dictionary:
                                          'this data.',
                 'Error': 'Error',
                 'Warning': 'Warning',
-                'Confirm': 'Confirm your action'
+                'Confirm': 'Confirm your action',
+                'Select File': 'Select File'
                 }
 
     def dict_ru(self):
@@ -29,5 +30,6 @@ class dictionary:
                                          'использован для этих данных.',
                 'Error': 'Ошибка',
                 'Warning': 'Предупреждение',
-                'Confirm': 'Подтвердите действие'
+                'Confirm': 'Подтвердите действие',
+                'Select File': 'Выбрать файл'
                 }

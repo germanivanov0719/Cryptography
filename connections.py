@@ -36,9 +36,11 @@ class connections:
 
         # Sha hashing
         self.hash_sha.clicked.connect(self.fhash_sha)
+        self.file_sha.clicked.connect(self.ffile_sha)
 
         # Md5 hashing
         self.hash_md5.clicked.connect(self.fhash_md5)
+        self.file_md5.clicked.connect(self.ffile_md5)
 
         # Compare
         self.textEdit1_comp.textChanged.connect(self.compare)
