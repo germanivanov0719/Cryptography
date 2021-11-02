@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>743</width>
-    <height>624</height>
+    <width>751</width>
+    <height>754</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -319,6 +319,27 @@ p, li { white-space: pre-wrap; }
             </property>
            </spacer>
           </item>
+          <item row="7" column="0" colspan="2">
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QPushButton" name="help_fe">
+            <property name="text">
+             <string>Show Help</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QTextEdit" name="helpText_fe">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
        </layout>
@@ -487,6 +508,27 @@ p, li { white-space: pre-wrap; }
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="8" column="0">
+           <widget class="QPushButton" name="help_fd">
+            <property name="text">
+             <string>Show help</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QTextEdit" name="helpText_fd">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="2">
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -778,6 +820,23 @@ p, li { white-space: pre-wrap; }
             </property>
            </spacer>
           </item>
+          <item row="6" column="0">
+           <widget class="QPushButton" name="help_sha">
+            <property name="text">
+             <string>Show help</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QTextEdit" name="helpText_sha"/>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
        </layout>
@@ -836,6 +895,24 @@ p, li { white-space: pre-wrap; }
             </item>
            </layout>
           </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QPushButton" name="hash_md5">
+              <property name="text">
+               <string>Hash</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="file_md5">
+              <property name="text">
+               <string>Select a file to hash</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_2_md5">
             <property name="text">
@@ -886,23 +963,22 @@ p, li { white-space: pre-wrap; }
             </property>
            </spacer>
           </item>
-          <item row="1" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QPushButton" name="hash_md5">
-              <property name="text">
-               <string>Hash</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="file_md5">
-              <property name="text">
-               <string>Select a file to hash</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+          <item row="5" column="0">
+           <widget class="QPushButton" name="help_md5">
+            <property name="text">
+             <string>Show help</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QTextEdit" name="helpText_md5"/>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -1038,7 +1114,7 @@ color: green
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>743</width>
+     <width>751</width>
      <height>24</height>
     </rect>
    </property>
