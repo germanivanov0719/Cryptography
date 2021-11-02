@@ -54,12 +54,14 @@ class translation:
         self.copy_sha.setText("Copy")
         self.paste_sha.setText("Paste")
         self.hash_sha.setText("Hash")
+        self.file_sha.setText("Select a file to hash")
         # md5 hashing
         self.label_2_md5.setText("Result:")
         self.label_md5.setText("Text to hash:")
         self.copy_md5.setText("Copy")
         self.paste_md5.setText("Paste")
         self.hash_md5.setText("Hash")
+        self.file_md5.setText("Select a file to hash")
         # compare
         self.label_comp.setText("First text:")
         self.label_2_comp.setText("Second text:")
@@ -103,12 +105,14 @@ class translation:
         self.copy_sha.setText("Копировать")
         self.paste_sha.setText("Вставить")
         self.hash_sha.setText("Хешировать")
+        self.file_sha.setText("Выбрать файл для хеширования")
         # md5 hashing
         self.label_2_md5.setText("Результат:")
         self.label_md5.setText("Текст для хеширования:")
         self.copy_md5.setText("Копировать")
         self.paste_md5.setText("Вставить")
         self.hash_md5.setText("Хешировать")
+        self.file_md5.setText("Выбрать файл для хеширования")
         # compare
         self.label_comp.setText("Первый текст:")
         self.label_2_comp.setText("Второй текст:")
