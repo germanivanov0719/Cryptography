@@ -1,4 +1,6 @@
 # PyQt5 requirements
+import os
+
 from PyQt5 import uic, QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
 from cryptography.fernet import Fernet
@@ -26,6 +28,27 @@ class md5_methods:
         if path == '':
             return 0
         r = self.hashing_core_md5()
+        try:
+            f = open(path, 'r')
+            f.close()
+            if os.stat(path).st_size // 1024 > 1e6:
+                wa = QMessageBox()
+                wa.setWindowTitle(self.dict['Confirm'])
+                wa.setText(self.dict['Big file title'])
+                wa.setInformativeText(self.dict['Big file body'])
+                wa.setStandardButtons(QMessageBox.Yes | QMessageBox.Abort)
+                wa.setIcon(QMessageBox.Question)
+                if wa.exec_() != QMessageBox.Yes:
+                    return 0
+        except FileNotFoundError:
+            wa = QMessageBox()
+            wa.setWindowTitle(self.dict['Error'])
+            wa.setText(self.dict['File not found title'])
+            wa.setInformativeText(self.dict['File not found body'])
+            wa.setStandardButtons(QMessageBox.Ok)
+            wa.setIcon(QMessageBox.Critical)
+            wa.exec_()
+            return 0
         with open(path, 'rb') as f:
             chunk = 0
             while chunk != b'':

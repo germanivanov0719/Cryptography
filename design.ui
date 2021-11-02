@@ -136,7 +136,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -154,7 +154,7 @@
        <bool>false</bool>
       </property>
       <property name="tabBarAutoHide">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <widget class="QWidget" name="tab_fernet_encrypt">
        <property name="accessibleName">
@@ -1051,7 +1051,6 @@ color: green
    </widget>
    <addaction name="menuLanguage"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="menuEnglish">
    <property name="checkable">
     <bool>true</bool>

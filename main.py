@@ -34,6 +34,7 @@ class MainWindow(QMainWindow,
         uic.loadUi('design.ui', self)
         self.d = dictionary()
         self.auto_language()
+        self.setWindowTitle('Cryptography')
         self.connect()
 
 

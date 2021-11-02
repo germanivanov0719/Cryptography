@@ -14,7 +14,12 @@ class dictionary:
                 'Error': 'Error',
                 'Warning': 'Warning',
                 'Confirm': 'Confirm your action',
-                'Select File': 'Select File'
+                'Select File': 'Select File',
+                'File not found title': 'File not found.',
+                'File not found body': 'You selected a file, which does not exist or not available.',
+                'Big file title': 'The file you selected might take large time process.',
+                'Big file body': 'File you selected would take longer than 1 second to proceed. During this operation, '
+                                 'it might look like the program is unresponsive. Are you sure you want to continue?'
                 }
 
     def dict_ru(self):
@@ -31,5 +36,11 @@ class dictionary:
                 'Error': 'Ошибка',
                 'Warning': 'Предупреждение',
                 'Confirm': 'Подтвердите действие',
-                'Select File': 'Выбрать файл'
+                'Select File': 'Выбрать файл',
+                'File not found title': 'Файл не найден.',
+                'File not found body': 'Вы выбрали файл, который не существует или недоступен.',
+                'Big file title': 'На обработку выбранного файла может потребоваться большое количество времени.',
+                'Big file body': 'Обработка выбранного Вами файла может занять более 1 секунды. Во время этого '
+                                 'процесса может показаться, что программа не отвечает. Вы уверены, '
+                                 'что хотите продолжить?'
                 }
