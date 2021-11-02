@@ -32,6 +32,7 @@ class MainWindow(QMainWindow,
     def __init__(self):
         super().__init__()
         uic.loadUi('design.ui', self)
+        self.help_visibility = [False] * 4
         self.d = dictionary()
         self.auto_language()
         self.setWindowTitle('Cryptography')

@@ -17,6 +17,10 @@ class connections:
         self.generate_fd.clicked.connect(self.fgenerate_fd)
 
         # Fernet Encrypt/Decrypt
+        self.helpText_fe.hide()
+        self.helpText_fd.hide()
+        self.help_fe.clicked.connect(self.fhelp_fe)
+        self.help_fd.clicked.connect(self.fhelp_fd)
         self.encrypt_fe.clicked.connect(self.fencrypt_fe)
         self.decrypt_fd.clicked.connect(self.fdecrypt_fd)
 
@@ -35,10 +39,14 @@ class connections:
         self.paste2_comp.clicked.connect(self.fpaste2_comp)
 
         # Sha hashing
+        self.helpText_sha.hide()
+        self.help_sha.clicked.connect(self.fhelp_sha)
         self.hash_sha.clicked.connect(self.fhash_sha)
         self.file_sha.clicked.connect(self.ffile_sha)
 
         # Md5 hashing
+        self.helpText_md5.hide()
+        self.help_md5.clicked.connect(self.fhelp_md5)
         self.hash_md5.clicked.connect(self.fhash_md5)
         self.file_md5.clicked.connect(self.ffile_md5)
 

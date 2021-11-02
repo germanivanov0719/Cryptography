@@ -23,6 +23,15 @@ class translation:
         self.dict = self.d.dict_en()
         self.menuEnglish.setChecked(True)
         self.menuRussian.setChecked(False)
+        # hide and reopen help
+        self.help_fe.click()
+        self.help_fd.click()
+        self.help_sha.click()
+        self.help_md5.click()
+        self.help_fe.click()
+        self.help_fd.click()
+        self.help_sha.click()
+        self.help_md5.click()
         # menubar
         self.menuLanguage.setTitle("Language")
         # tabs
@@ -74,6 +83,15 @@ class translation:
         self.dict = self.d.dict_ru()
         self.menuEnglish.setChecked(False)
         self.menuRussian.setChecked(True)
+        # reset help
+        self.help_fe.click()
+        self.help_fd.click()
+        self.help_sha.click()
+        self.help_md5.click()
+        self.help_fe.click()
+        self.help_fd.click()
+        self.help_sha.click()
+        self.help_md5.click()
         # menubar
         self.menuLanguage.setTitle("Язык")
         # tabs

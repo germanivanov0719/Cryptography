@@ -12,6 +12,26 @@ import locale
 
 
 class fernet_methods:
+    def fhelp_fe(self):
+        self.helpText_fe.setText(self.dict['fe help'])
+        self.help_visibility[0] = not self.help_visibility[0]
+        if self.help_visibility[0]:
+            self.helpText_fe.show()
+            self.help_fe.setText(self.dict["Hide help"])
+        else:
+            self.helpText_fe.hide()
+            self.help_fe.setText(self.dict["Show help"])
+
+    def fhelp_fd(self):
+        self.helpText_fd.setText(self.dict['fd help'])
+        self.help_visibility[1] = not self.help_visibility[1]
+        if self.help_visibility[1]:
+            self.helpText_fd.show()
+            self.help_fd.setText(self.dict["Hide help"])
+        else:
+            self.helpText_fd.hide()
+            self.help_fd.setText(self.dict["Show help"])
+
     def fcopy_fe(self):
         pc.copy(self.result_fe.text())
 

@@ -14,6 +14,16 @@ import locale
 
 
 class md5_methods:
+    def fhelp_md5(self):
+        self.helpText_md5.setText(self.dict['md5 help'])
+        self.help_visibility[3] = not self.help_visibility[3]
+        if self.help_visibility[3]:
+            self.helpText_md5.show()
+            self.help_md5.setText(self.dict["Hide help"])
+        else:
+            self.helpText_md5.hide()
+            self.help_md5.setText(self.dict["Show help"])
+
     def hashing_core_md5(self):
         return hashlib.md5()
 

@@ -136,7 +136,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -335,6 +335,11 @@ p, li { white-space: pre-wrap; }
           </item>
           <item row="9" column="1">
            <widget class="QTextEdit" name="helpText_fe">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -518,6 +523,11 @@ p, li { white-space: pre-wrap; }
           </item>
           <item row="8" column="1">
            <widget class="QTextEdit" name="helpText_fd">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -828,7 +838,16 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QTextEdit" name="helpText_sha"/>
+           <widget class="QTextEdit" name="helpText_sha">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
           <item row="5" column="0" colspan="2">
            <widget class="Line" name="line_3">
@@ -971,7 +990,16 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="QTextEdit" name="helpText_md5"/>
+           <widget class="QTextEdit" name="helpText_md5">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0" colspan="2">
            <widget class="Line" name="line_4">

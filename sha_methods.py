@@ -14,6 +14,16 @@ import locale
 
 
 class sha_methods:
+    def fhelp_sha(self):
+        self.helpText_sha.setText(self.dict['sha help'])
+        self.help_visibility[2] = not self.help_visibility[2]
+        if self.help_visibility[2]:
+            self.helpText_sha.show()
+            self.help_sha.setText(self.dict["Hide help"])
+        else:
+            self.helpText_sha.hide()
+            self.help_sha.setText(self.dict["Show help"])
+
     def hashing_core_sha(self):
         alg = self.sha_btn_group.checkedButton().text().lower().replace('sha', '').replace('-', '')
         if alg == '1':
