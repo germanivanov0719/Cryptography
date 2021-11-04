@@ -24,8 +24,8 @@ class dictionary:
                 'Hide help': 'Hide help',
                 # help messages
                 'fe help': 'Fernet is a secure encryption algorithm based on AES. After you encrypt information with '
-                           'your key, the only possible way to decrypt it is to use the key. To decrypt data without '
-                           'the key, brute force is required, which can take up to 2^128 operations for this '
+                           'your key, the only possible way to decrypt it is to use the same key. Without '
+                           'the key, brute force would be required, taking up to 2^128 operations for this '
                            'algorithm. '
                            'For today no computer is able to perform that many calculations in adequate time. \n\nIn '
                            'order to encrypt data you need a unique Fernet key. You can generate a random one right '
@@ -81,7 +81,8 @@ class dictionary:
                 # help messages
                 'fe help': 'Fernet — безопасный алгоритм шифрования, основанный на AES. После того, как данные '
                            'зашифрованны определенным ключом, единственный возможный метод расшифровать их — '
-                           'использовать ключ. В случае отсутствия ключа требуется перебор, который может занять до'
+                           'использовать тот же ключ. В случае отсутствия ключа требуется перебор, который может '
+                           'занять до '
                            '2^128 операций для данного алгоритма. На сегодняшний день нет ни одного компьютера, '
                            'который был бы способен провести столько вычислений за адекватное количество времени.\n\n'
                            'Чтобы зашифровать данные, Вам потребуется уникальный ключ Fernet. Вы можете '

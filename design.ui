@@ -136,7 +136,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -337,7 +337,7 @@ p, li { white-space: pre-wrap; }
            <widget class="QTextEdit" name="helpText_fe">
             <property name="font">
              <font>
-              <pointsize>18</pointsize>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="readOnly">
@@ -525,7 +525,7 @@ p, li { white-space: pre-wrap; }
            <widget class="QTextEdit" name="helpText_fd">
             <property name="font">
              <font>
-              <pointsize>18</pointsize>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="readOnly">
@@ -841,7 +841,7 @@ p, li { white-space: pre-wrap; }
            <widget class="QTextEdit" name="helpText_sha">
             <property name="font">
              <font>
-              <pointsize>18</pointsize>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="readOnly">
@@ -993,7 +993,7 @@ p, li { white-space: pre-wrap; }
            <widget class="QTextEdit" name="helpText_md5">
             <property name="font">
              <font>
-              <pointsize>18</pointsize>
+              <pointsize>13</pointsize>
              </font>
             </property>
             <property name="readOnly">
