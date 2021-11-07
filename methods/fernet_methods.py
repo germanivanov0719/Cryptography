@@ -12,6 +12,12 @@ import locale
 
 
 class fernet_methods:
+    def fsave_fe(self):
+        self.add_db(self.key_fe.text())
+
+    def fsave_fd(self):
+        self.add_db(self.key_fd.text())
+
     def fhelp_fe(self):
         self.helpText_fe.setText(self.dict['fe help'])
         self.help_visibility[0] = not self.help_visibility[0]

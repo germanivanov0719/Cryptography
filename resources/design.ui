@@ -136,7 +136,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -227,7 +227,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0">
+           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0">
             <property name="sizeConstraint">
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
@@ -257,6 +257,13 @@ p, li { white-space: pre-wrap; }
              <widget class="QPushButton" name="generate_fe">
               <property name="text">
                <string>Generate</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="save_fe">
+              <property name="text">
+               <string>Save</string>
               </property>
              </widget>
             </item>
@@ -410,7 +417,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="2" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,0">
+           <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,0,0">
             <property name="sizeConstraint">
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
@@ -440,6 +447,13 @@ p, li { white-space: pre-wrap; }
               </property>
               <property name="text">
                <string>Generate</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="save_fd">
+              <property name="text">
+               <string>Save</string>
               </property>
              </widget>
             </item>
@@ -1153,7 +1167,24 @@ color: green
     <addaction name="menuEnglish"/>
     <addaction name="menuRussian"/>
    </widget>
+   <widget class="QMenu" name="menuDatabases">
+    <property name="title">
+     <string>Databases</string>
+    </property>
+    <widget class="QMenu" name="menuFernet_keys">
+     <property name="tearOffEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Fernet keys</string>
+     </property>
+     <addaction name="show_keys_db"/>
+     <addaction name="clear_keys_db"/>
+    </widget>
+    <addaction name="menuFernet_keys"/>
+   </widget>
    <addaction name="menuLanguage"/>
+   <addaction name="menuDatabases"/>
   </widget>
   <action name="menuEnglish">
    <property name="checkable">
@@ -1172,6 +1203,16 @@ color: green
    </property>
    <property name="text">
     <string>Русский</string>
+   </property>
+  </action>
+  <action name="show_keys_db">
+   <property name="text">
+    <string>Show all keys</string>
+   </property>
+  </action>
+  <action name="clear_keys_db">
+   <property name="text">
+    <string>Delete saved keys</string>
    </property>
   </action>
  </widget>

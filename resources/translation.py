@@ -12,6 +12,9 @@ import locale
 
 
 class translation:
+    def __init__(self):
+        self.dict = []
+
     def auto_language(self):
         loc = locale.getdefaultlocale()
         if loc in ('ru_RU', 'be_BE', 'kk_KK', 'uk-UK', 'uz-UZ', 'tk-TK'):
@@ -34,6 +37,9 @@ class translation:
         self.help_md5.click()
         # menubar
         self.menuLanguage.setTitle("Language")
+        self.menuDatabases.setTitle("Databases")
+        self.show_keys_db.setText("Show all keys")
+        self.clear_keys_db.setText("Delete saved keys")
         # tabs
         self.tabWidget.setTabText(0, "Fernet Encryption")
         self.tabWidget.setTabText(1, "Fernet Decryption")
@@ -94,6 +100,9 @@ class translation:
         self.help_md5.click()
         # menubar
         self.menuLanguage.setTitle("Язык")
+        self.menuDatabases.setTitle("Базы данных")
+        self.show_keys_db.setText("Показать все ключи")
+        self.clear_keys_db.setText("Удалить сохранненые ключи")
         # tabs
         self.tabWidget.setTabText(0, "Шифрование Fernet")
         self.tabWidget.setTabText(1, "Расшифровка Fernet")
@@ -138,4 +147,7 @@ class translation:
         self.paste2_comp.setText("Вставить")
         self.label_3_comp.setText("Результат:")
         self.compare()
+
+    def dt_auto_format(self, time):
+        return time.strftime("%x %X")
 

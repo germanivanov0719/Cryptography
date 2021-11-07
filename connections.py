@@ -1,20 +1,24 @@
 # PyQt5 requirements
-from PyQt5 import uic, QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-from cryptography.fernet import Fernet
+from resources.show_keys_dialogue import show_keys_dialogue
 
 # other libs
-import hashlib
-import sys
-import cryptography.fernet
-import pyperclip as pc
-import locale
 
 
 class connections:
+    def __init__(self):
+        # Create dialogues
+        #
+        # self.show_keys_dialogue.exec()
+        # self.show_keys_dialogue.hide()
+        pass
+
     def connect(self):
         self.generate_fe.clicked.connect(self.fgenerate_fe)
         self.generate_fd.clicked.connect(self.fgenerate_fd)
+
+        # Dialogues
+        self.show_keys_dialogue.close_show.clicked.connect(self.fclose_show)
+        self.show_keys_dialogue.clear_show.clicked.connect(self.fclear_show)
 
         # Fernet Encrypt/Decrypt
         self.helpText_fe.hide()
@@ -23,6 +27,8 @@ class connections:
         self.help_fd.clicked.connect(self.fhelp_fd)
         self.encrypt_fe.clicked.connect(self.fencrypt_fe)
         self.decrypt_fd.clicked.connect(self.fdecrypt_fd)
+        self.save_fe.clicked.connect(self.fsave_fe)
+        self.save_fd.clicked.connect(self.fsave_fd)
 
         # Copy
         self.copy_fe.clicked.connect(self.fcopy_fe)
@@ -57,3 +63,4 @@ class connections:
         # menubar
         self.menuEnglish.triggered.connect(self.to_english)
         self.menuRussian.triggered.connect(self.to_russian)
+        self.show_keys_db.triggered.connect(self.fshow_keys_db)

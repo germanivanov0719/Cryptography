@@ -1,9 +1,16 @@
 #! python3
+
+# How to use:
+# ./check-lines.py main.py connections.py methods/compare_methods.py methods/databases_methods.py \
+# methods/fernet_methods.py \
+# methods/md5_methods.py methods/sha_methods.py resources/show_keys_dialogue.py \
+# resources/dynamic_translations.py resources/translation.py
+
 import sys
 
 r = 0
 if len(sys.argv) == 1:
-    print("Filename is not argument 1.")
+    print("Filenames not detected.")
     exit(0)
 
 
