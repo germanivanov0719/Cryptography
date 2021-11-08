@@ -52,7 +52,10 @@ class dictionary:
                             'It is important in today\'s world and used widely against cybercrime.\n\n'
                             'MD5 should NOT be used , as collision was found in 1995. Instead, any modern '
                             'SHA should be preferred. However, it is fine to do file integrity verification using MD5.'
-                            'To read about file integrity verifications, go to help on \"SHA\" tab.'
+                            'To read about file integrity verifications, go to help on \"SHA\" tab.',
+                'exit title': 'Do you want to remove the Fernet key database?',
+                'exit body': 'We recommend removing it. If you tried to exit accidentally, '
+                             'use \"Cancel\" to return to the program.'
                 }
 
     def dict_ru(self):
@@ -119,5 +122,8 @@ class dictionary:
                              'используйте любой современный SHA. '
                              'Тем не менее, проверка целостности файлов с помощью MD5 может осуществляться.'
                              'Чтобы прочитать о проверках целостности файлов, перейдите в раздел справки на вкладке '
-                            '\"SHA\". '
+                            '\"SHA\". ',
+                'exit title': 'Вы хотите удалить базу данных ключей Fernet?',
+                'exit body': 'Мы рекомендуем удалить базы данных при выходе. Если вы попытались выйти случайно, '
+                             'используйте \"Отменить\" чтобы вернуться в программу.'
                 }

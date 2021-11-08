@@ -45,11 +45,11 @@ class MainWindow(QMainWindow,
     def closeEvent(self, event):
         self.show_keys_dialogue.hide()
         wa = QMessageBox()
-        wa.setWindowTitle(self.dict['Warning'])
-        wa.setText("exit?")
-        wa.setInformativeText('Del DB?')
+        wa.setWindowTitle(self.dict['Confirm'])
+        wa.setText(self.dict['exit title'])
+        wa.setInformativeText(self.dict['exit body'])
         wa.setStandardButtons(QMessageBox.Cancel | QMessageBox.No | QMessageBox.Yes)
-        wa.setIcon(QMessageBox.Warning)
+        wa.setIcon(QMessageBox.Question)
         r = wa.exec_()
         if r == QMessageBox.Yes:
             os.remove("fernet_keys.sqlite")
