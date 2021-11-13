@@ -15,7 +15,6 @@ from methods.databases_methods import databases_methods
 from resources.show_keys_dialogue import show_keys_dialogue
 
 
-
 # other libs
 import sys
 import os

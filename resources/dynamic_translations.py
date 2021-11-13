@@ -55,7 +55,11 @@ class dictionary:
                             'To read about file integrity verifications, go to help on \"SHA\" tab.',
                 'exit title': 'Do you want to remove the Fernet key database?',
                 'exit body': 'We recommend removing it. If you tried to exit accidentally, '
-                             'use \"Cancel\" to return to the program.'
+                             'use \"Cancel\" to return to the program.',
+                'db here title': 'Database detected.',
+                'db here body': 'Database with Fernet keys detected. Do you want to remove it? If you want to keep ' \
+                                'it and use this time, press no.',
+                'Export to': 'Export to'
                 }
 
     def dict_ru(self):
@@ -125,5 +129,9 @@ class dictionary:
                             '\"SHA\". ',
                 'exit title': 'Вы хотите удалить базу данных ключей Fernet?',
                 'exit body': 'Мы рекомендуем удалить базы данных при выходе. Если вы попытались выйти случайно, '
-                             'используйте \"Отменить\" чтобы вернуться в программу.'
+                             'используйте \"Отменить\" чтобы вернуться в программу.',
+                'db here title': 'Обнаружена база данных.',
+                'db here body': 'База данных с ключами Fernet обнаружена. Вы хотите удалить её? Если Вы хотите '
+                                'сохранить и использовать её, нажмите нет.',
+                'Export to': 'Экспорт в'
                 }

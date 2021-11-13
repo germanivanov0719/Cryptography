@@ -1,8 +1,4 @@
 # PyQt5 requirements
-import datetime
-import os
-import sqlite3
-
 from PyQt5 import uic, QtWidgets, QtCore
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QTableWidgetItem
@@ -14,6 +10,10 @@ import sys
 import cryptography.fernet
 import pyperclip as pc
 import locale
+import csv
+import datetime
+import os
+import sqlite3
 
 
 # To create the correct table, use this:
@@ -24,6 +24,23 @@ import locale
 
 
 class databases_methods:
+    def export_to_csv(self):
+        path = str(QFileDialog.getSaveFileName(self, self.dict['Export to'], '')[0]) + '.csv'
+        if path == '.csv':
+            return 0
+        # print(path)
+        connection = sqlite3.connect("fernet_keys.sqlite")
+        cur = connection.cursor()
+        cur.execute("SELECT * FROM fernet_keys")
+        with open(path, 'w', encoding='utf-8') as f:
+            csv_out = csv.writer(f)
+            # print(cur.description)
+            # csv_out.writerow([i[0] for i in cur.description])  # header
+            for res in cur:
+                csv_out.writerow(res)
+        connection.close()
+
+
     def fshow_keys_db(self):
         obj = self.show_keys_dialogue
         connection = sqlite3.connect("fernet_keys.sqlite")
@@ -50,17 +67,18 @@ class databases_methods:
     def fclose_show(self):
         self.show_keys_dialogue.hide()
 
-    def fclear_show(self):
+    def fclear_db(self):
         os.remove("fernet_keys.sqlite")
         self.init_db()
+        self.update_dialogue()
 
     def init_db(self):
         try:
             with open("fernet_keys.sqlite", 'r'):
                 wa = QMessageBox()
                 wa.setWindowTitle(self.dict['Confirm'])
-                wa.setText("DB here")
-                wa.setInformativeText("Remove? RISKS!!")
+                wa.setText(self.dict["db here title"])
+                wa.setInformativeText(self.dict["db here body"])
                 wa.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 wa.setIcon(QMessageBox.Warning)
                 r = wa.exec_()
@@ -86,6 +104,9 @@ class databases_methods:
                                     VALUES('{dt_now}', '{value}')""")
         connection.commit()
         connection.close()
+        self.update_dialogue()
+
+    def update_dialogue(self):
         if self.show_keys_dialogue.isVisible():
             self.fshow_keys_db()
         else:

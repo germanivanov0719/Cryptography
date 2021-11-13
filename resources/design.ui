@@ -136,7 +136,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -1180,6 +1180,7 @@ color: green
      </property>
      <addaction name="show_keys_db"/>
      <addaction name="clear_keys_db"/>
+     <addaction name="export_db"/>
     </widget>
     <addaction name="menuFernet_keys"/>
    </widget>
@@ -1213,6 +1214,11 @@ color: green
   <action name="clear_keys_db">
    <property name="text">
     <string>Delete saved keys</string>
+   </property>
+  </action>
+  <action name="export_db">
+   <property name="text">
+    <string>Export to CSV</string>
    </property>
   </action>
  </widget>

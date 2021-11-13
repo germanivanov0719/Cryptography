@@ -18,7 +18,7 @@ class connections:
 
         # Dialogues
         self.show_keys_dialogue.close_show.clicked.connect(self.fclose_show)
-        self.show_keys_dialogue.clear_show.clicked.connect(self.fclear_show)
+        self.show_keys_dialogue.clear_show.clicked.connect(self.fclear_db)
 
         # Fernet Encrypt/Decrypt
         self.helpText_fe.hide()
@@ -64,3 +64,5 @@ class connections:
         self.menuEnglish.triggered.connect(self.to_english)
         self.menuRussian.triggered.connect(self.to_russian)
         self.show_keys_db.triggered.connect(self.fshow_keys_db)
+        self.clear_keys_db.triggered.connect(self.fclear_db)
+        self.export_db.triggered.connect(self.export_to_csv)

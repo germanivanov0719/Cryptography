@@ -17,7 +17,8 @@ class translation:
 
     def auto_language(self):
         loc = locale.getdefaultlocale()
-        if loc in ('ru_RU', 'be_BE', 'kk_KK', 'uk-UK', 'uz-UZ', 'tk-TK'):
+        # print(loc)
+        if loc[0] in ('ru_RU', 'be_BE', 'kk_KK', 'uk-UK', 'uz-UZ', 'tk-TK'):
             self.to_russian()
         else:
             self.to_english()
@@ -26,6 +27,7 @@ class translation:
         self.dict = self.d.dict_en()
         self.menuEnglish.setChecked(True)
         self.menuRussian.setChecked(False)
+
         # hide and reopen help
         self.help_fe.click()
         self.help_fd.click()
@@ -40,6 +42,8 @@ class translation:
         self.menuDatabases.setTitle("Databases")
         self.show_keys_db.setText("Show all keys")
         self.clear_keys_db.setText("Delete saved keys")
+        self.menuFernet_keys.setTitle("Fernet keys")
+        self.export_db.setText("Export to CSV")
         # tabs
         self.tabWidget.setTabText(0, "Fernet Encryption")
         self.tabWidget.setTabText(1, "Fernet Decryption")
@@ -54,6 +58,7 @@ class translation:
         self.copy_fe.setText("Copy")
         self.paste_fe.setText("Paste")
         self.generate_fe.setText("Generate")
+        self.save_fe.setText("Save")
         # Fernet decrypt
         self.label_fd.setText("Decrypted text:")
         self.label_2_fd.setText("Key:")
@@ -62,6 +67,7 @@ class translation:
         self.copy_fd.setText("Copy")
         self.paste_fd.setText("Paste")
         self.generate_fd.setText("Generate")
+        self.save_fd.setText("Save")
         # sha hashing
         self.label_2_sha.setText("Result:")
         self.label_3_sha.setText("Algorithm:")
@@ -103,6 +109,8 @@ class translation:
         self.menuDatabases.setTitle("Базы данных")
         self.show_keys_db.setText("Показать все ключи")
         self.clear_keys_db.setText("Удалить сохранненые ключи")
+        self.menuFernet_keys.setTitle("Ключи Fernet")
+        self.export_db.setText("Экспорт в CSV")
         # tabs
         self.tabWidget.setTabText(0, "Шифрование Fernet")
         self.tabWidget.setTabText(1, "Расшифровка Fernet")
@@ -117,6 +125,7 @@ class translation:
         self.copy_fe.setText("Копировать")
         self.paste_fe.setText("Вставить")
         self.generate_fe.setText("Генерировать")
+        self.save_fe.setText("Сохранить")
         # Fernet decrypt
         self.label_fd.setText("Расшифрованный текст:")
         self.label_2_fd.setText("Ключ:")
@@ -125,6 +134,7 @@ class translation:
         self.copy_fd.setText("Копировать")
         self.paste_fd.setText("Вставить")
         self.generate_fd.setText("Генерировать")
+        self.save_fe.setText("Сохранить")
         # sha hashing
         self.label_2_sha.setText("Результат:")
         self.label_3_sha.setText("Алгоритм:")
@@ -150,4 +160,38 @@ class translation:
 
     def dt_auto_format(self, time):
         return time.strftime("%x %X")
+
+    def update_helps(self):
+        # Fernet Encrypt
+        self.help_visibility[0] = not self.help_visibility[0]
+        if self.help_visibility[0]:
+            self.helpText_fe.show()
+            self.help_fe.setText(self.dict["Hide help"])
+        else:
+            self.helpText_fe.hide()
+            self.help_fe.setText(self.dict["Show help"])
+        self.help_visibility[1] = not self.help_visibility[1]
+        # Fernet Decrypt
+        if self.help_visibility[1]:
+            self.helpText_fd.show()
+            self.help_fd.setText(self.dict["Hide help"])
+        else:
+            self.helpText_fd.hide()
+            self.help_fd.setText(self.dict["Show help"])
+        # MD5
+        self.help_visibility[3] = not self.help_visibility[3]
+        if self.help_visibility[3]:
+            self.helpText_md5.show()
+            self.help_md5.setText(self.dict["Hide help"])
+        else:
+            self.helpText_md5.hide()
+            self.help_md5.setText(self.dict["Show help"])
+        # SHA
+        self.help_visibility[2] = not self.help_visibility[2]
+        if self.help_visibility[2]:
+            self.helpText_sha.show()
+            self.help_sha.setText(self.dict["Hide help"])
+        else:
+            self.helpText_sha.hide()
+            self.help_sha.setText(self.dict["Show help"])
 
