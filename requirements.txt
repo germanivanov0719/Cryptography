@@ -1,0 +1,4 @@
+PyQt5 >= 5.14.2
+Cryptography >= 35.0.0
+Pyperclip >= 1.8.1
+
