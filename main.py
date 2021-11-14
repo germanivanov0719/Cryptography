@@ -31,12 +31,12 @@ class MainWindow(QMainWindow,
     def __init__(self):
         super().__init__()
         uic.loadUi('./resources/design.ui', self)
+        self.show_keys_dialogue = show_keys_dialogue()
         # self.show_keys_dialogue.exec()
         # self.show_keys_dialogue.hide()
         self.help_visibility = [False] * 4
         self.d = dictionary()
         self.auto_language()
-        self.show_keys_dialogue = show_keys_dialogue()
         self.init_db()
         self.setWindowTitle('Cryptography')
         self.connect()

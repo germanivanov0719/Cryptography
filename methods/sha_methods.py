@@ -54,7 +54,7 @@ class sha_methods:
         self.result_sha.setText(r.hexdigest())
 
     def ffile_sha(self):
-        path = QFileDialog.getOpenFileName(self, self.dict['Save to'], '')[0]
+        path = QFileDialog.getOpenFileName(self, self.dict['Select File'], '')[0]
         # path = '436432653'
         if path == '':
             return 0

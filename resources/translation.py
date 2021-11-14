@@ -27,7 +27,10 @@ class translation:
         self.dict = self.d.dict_en()
         self.menuEnglish.setChecked(True)
         self.menuRussian.setChecked(False)
-
+        # Dialogue
+        self.show_keys_dialogue.label.setText("This is the table with all Fernet keys you decided to save:")
+        self.show_keys_dialogue.clear_show.setText("Clear")
+        self.show_keys_dialogue.close_show.setText("Close")
         # hide and reopen help
         self.help_fe.click()
         self.help_fd.click()
@@ -95,6 +98,10 @@ class translation:
         self.dict = self.d.dict_ru()
         self.menuEnglish.setChecked(False)
         self.menuRussian.setChecked(True)
+        # Dialogue
+        self.show_keys_dialogue.label.setText("Таблица со ключами Fernet, которые вы решили сохранить:")
+        self.show_keys_dialogue.clear_show.setText("Очистить")
+        self.show_keys_dialogue.close_show.setText("Закрыть")
         # reset help
         self.help_fe.click()
         self.help_fd.click()
