@@ -1,6 +1,6 @@
 # PyQt5 requirements
 from PyQt5 import uic, QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QTableWidgetItem
 from cryptography.fernet import Fernet
 
 # other libs
@@ -31,6 +31,9 @@ class translation:
         self.show_keys_dialogue.label.setText("This is the table with all Fernet keys you decided to save:")
         self.show_keys_dialogue.clear_show.setText("Clear")
         self.show_keys_dialogue.close_show.setText("Close")
+        self.show_keys_dialogue.setWindowTitle("Fernet keys")
+        self.show_keys_dialogue.tableWidget.horizontalHeaderItem(0).setText("Time Added")
+        self.show_keys_dialogue.tableWidget.horizontalHeaderItem(1).setText("Key")
         # hide and reopen help
         self.help_fe.click()
         self.help_fd.click()
@@ -99,9 +102,12 @@ class translation:
         self.menuEnglish.setChecked(False)
         self.menuRussian.setChecked(True)
         # Dialogue
-        self.show_keys_dialogue.label.setText("Таблица со ключами Fernet, которые вы решили сохранить:")
+        self.show_keys_dialogue.label.setText("Таблица со ключами Fernet, которые Вы решили сохранить:")
         self.show_keys_dialogue.clear_show.setText("Очистить")
         self.show_keys_dialogue.close_show.setText("Закрыть")
+        self.show_keys_dialogue.setWindowTitle("Ключи Fernet")
+        self.show_keys_dialogue.tableWidget.horizontalHeaderItem(0).setText("Время добавления")
+        self.show_keys_dialogue.tableWidget.horizontalHeaderItem(1).setText("Ключ")
         # reset help
         self.help_fe.click()
         self.help_fd.click()

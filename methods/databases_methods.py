@@ -40,7 +40,6 @@ class databases_methods:
                 csv_out.writerow(res)
         connection.close()
 
-
     def fshow_keys_db(self):
         obj = self.show_keys_dialogue
         connection = sqlite3.connect("fernet_keys.sqlite")
@@ -112,4 +111,14 @@ class databases_methods:
         else:
             self.fshow_keys_db()
             self.show_keys_dialogue.hide()
+
+    # def retrigger_help(self):
+    #     self.help_fe.trigger()
+    #     self.help_fd.trigger()
+    #     self.help_sha.trigger()
+    #     self.help_md5.trigger()
+    #     self.help_fe.trigger()
+    #     self.help_fd.trigger()
+    #     self.help_sha.trigger()
+    #     self.help_md5.trigger()
 
