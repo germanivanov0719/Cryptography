@@ -1,0 +1,2 @@
+﻿Cryptography>=35.0.0
+Pyperclip>=1.8.1
