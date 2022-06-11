@@ -20,17 +20,20 @@ import sys
 import os
 
 
-class MainWindow(QMainWindow,
-                 fernet_methods,
-                 sha_methods, md5_methods,
-                 compare_methods,
-                 databases_methods,
-                 translation,
-                 dictionary,
-                 connections):
+class MainWindow(
+    QMainWindow,
+    fernet_methods,
+    sha_methods,
+    md5_methods,
+    compare_methods,
+    databases_methods,
+    translation,
+    dictionary,
+    connections,
+):
     def __init__(self):
         super().__init__()
-        uic.loadUi('./resources/design.ui', self)
+        uic.loadUi("./resources/design.ui", self)
         self.show_keys_dialogue = show_keys_dialogue()
         self.connect()
         # self.show_keys_dialogue.exec()
@@ -39,18 +42,17 @@ class MainWindow(QMainWindow,
         self.help_visibility = [False] * 4
         self.auto_language()
         self.init_db()
-        self.setWindowTitle('Cryptography')
-
-
-
+        self.setWindowTitle("Cryptography")
 
     def closeEvent(self, event):
         self.show_keys_dialogue.hide()
         wa = QMessageBox()
-        wa.setWindowTitle(self.dict['Confirm'])
-        wa.setText(self.dict['exit title'])
-        wa.setInformativeText(self.dict['exit body'])
-        wa.setStandardButtons(QMessageBox.Cancel | QMessageBox.No | QMessageBox.Yes)
+        wa.setWindowTitle(self.dict["Confirm"])
+        wa.setText(self.dict["exit title"])
+        wa.setInformativeText(self.dict["exit body"])
+        wa.setStandardButtons(
+            QMessageBox.Cancel | QMessageBox.No | QMessageBox.Yes
+        )
         wa.setIcon(QMessageBox.Question)
         r = wa.exec_()
         if r == QMessageBox.Yes:
@@ -66,12 +68,16 @@ def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Fix HiDPI
-    if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
-        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-    if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
-        QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
+    if hasattr(QtCore.Qt, "AA_EnableHighDpiScaling"):
+        QtWidgets.QApplication.setAttribute(
+            QtCore.Qt.AA_EnableHighDpiScaling, True
+        )
+    if hasattr(QtCore.Qt, "AA_UseHighDpiPixmaps"):
+        QtWidgets.QApplication.setAttribute(
+            QtCore.Qt.AA_UseHighDpiPixmaps, True
+        )
     app = QApplication(sys.argv)
     ex = MainWindow()
     ex.show()
